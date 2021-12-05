@@ -1,0 +1,122 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    color: #33539E;
+}
+
+.col-md-10{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    display: block;
+    border-radius: 50%;
+    margin-bottom: 50px;
+}
+
+.button{
+    text-align: center;
+}
+
+textarea{
+    margin-bottom: 20px;
+}
+
+.row .col-md-6{
+    margin-bottom: 20px;
+}
+
+h1{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.nav-pills .nav-link{
+    margin: 0 60px;
+    color: #33539E;
+    margin-top: 30px;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.nav-pills .nav-item .active{
+    /* font-weight: bold; */
+    background-color: #fff;
+    /* border: #1565D8 2px solid; */
+    border-radius: 50px;
+    background-image: linear-gradient(to bottom right, #64E8DE, #8A64EB);
+    /* color: #181B32; */
+    /* background: -webkit-linear-gradient(#7FACD6, #33539E); */
+    /* -webkit-background-clip: text; */
+    /* -webkit-text-fill-color: transparent; */
+}
+/* 
+.nav-pills .nav-item .active:after{
+    content: '';
+    display: block;
+    border-bottom: #33539E 5px solid;
+    width: 80%;
+    background-color: #fff;
+    margin: auto;
+    padding-top: 5px;
+} */
+
+.tab-content{
+    border: #7FACD6 2px solid;
+    border-radius: 50px;
+    margin-bottom: 80px;
+}
+
+.button input{
+    border-radius: 60px;
+    border: #7FACD6 2px solid;
+    background-color: white;
+    color: #33539E;
+
+    /* border: none;
+    background-image: linear-gradient(to bottom right, #64E8DE, #8A64EB);
+    color: white; */
+    padding: 6px 10px;
+    margin: 10px 10px;
+}
+
+.button input:hover{
+    border: none;
+    background-image: linear-gradient(to bottom right, #64E8DE, #8A64EB);
+    /* background-color: #7FACD6; */
+    color: white;
+
+    /* border: #7FACD6 1px solid;
+    background-color: white;
+    color: #33539E;
+    background-image: none; */
+    padding: 8px 12px;
+}
+
+#r-vig{
+    background-color: white;
+}
+
+#r-columnar{
+    background-color: white;
+}
+
+label{
+    margin-left: 10px;
+    margin-bottom: 5px;
+    color: #33539E;
+}
+
+footer{
+    background-color: #7FACD6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p{
+    color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 15px;
+}
