@@ -3,16 +3,16 @@
 var chars = "abcdefghijklmnopqrstuvwxyz";
 
 function handleEncryptCol() {
-    var plaintext = (getById("m-columnar").value);
-    if (validate(plaintext, 'Please enter some plaintext.')) return;
-    var key = (getById("key-columnar").value);
-    var pc = (getById("pc-columnar").value);
+    var plaintext = normalize(getById("m-columnar").value);
+    if (validate(plaintext, 'Please enter some plaintext (letters only).')) return;
+    var key = normalize(getById("key-columnar").value);
+    var pc = normalize(getById("pc-columnar").value);
     getById("r-columnar").value = encryptCol(plaintext, key, pc);
 }
 function handleDecryptCol() {
-    var ciphertext = (getById("m-columnar").value);
+    var ciphertext = normalize(getById("m-columnar").value);
     if (validate(ciphertext, 'Please enter some ciphertext (letters only).')) return;
-    var key = (getById("key-columnar").value);
+    var key = normalize(getById("key-columnar").value);
     getById("r-columnar").value = decryptCol(ciphertext, key);
 }
 
@@ -91,9 +91,9 @@ function getById(id) {
     return document.getElementById(id);
 }
 
-// function normalize(value) {
-//     return value.toLowerCase().replace(/[^a-z]/g, "");
-// }
+function normalize(value) {
+    return value.toLowerCase().replace(/[^a-z]/g, "");
+}
 
 
 
@@ -105,17 +105,16 @@ function getById(id) {
  * @return {object} An array with the character or null if isn't a letter
  */
 
-
  function handleEncryptVig() {
     var plaintext = getById("m-vig").value;
-    if (validate(plaintext, 'Please enter some plaintext.')) return;
+    if (validate(plaintext, 'Please enter some plaintext (letters only).')) return;
     var key = getById("key-vig").value;
     getById("r-vig").value = encryptVig(plaintext, key);
 }
 
 function handleDecryptVig() {
     var ciphertext = getById("m-vig").value;
-    if (validate(ciphertext, 'Please enter some ciphertext.')) return;
+    if (validate(ciphertext, 'Please enter some ciphertext (letters only).')) return;
     var key = getById("key-vig").value;
     getById("r-vig").value = decryptVig(ciphertext, key);
 }
@@ -126,18 +125,6 @@ function validate(text, message) {
       alert(message);
   }
 }
-
-// function handleEncrypt(){
-// 	var plaintext = getById("p").value;
-// 	var key = getById("key").value;
-// 	getById("c").value = encrypt(plaintext, key);
-// }
-
-// function handleDecrypt(){
-// 	var ciphertext = getById("c").value;
-// 	var key = getById("key").value;
-// 	getById("p").value = decrypt(ciphertext, key);
-// }
 
  function isLetter (str) {
 	return str.length === 1 && str.match(/[a-zA-Z]/i)
@@ -208,3 +195,36 @@ function validate(text, message) {
   }
 
   
+// Vigenere ke Columnar
+
+function handleEncryptvc() {
+  var plaintext = normalize(getById("m-vc").value);
+  if (validate(plaintext, 'Please enter some plaintext.')) return;
+  var key = normalize(getById("key-vc").value);
+  var pc = normalize(getById("pc-vc").value);
+  getById("r-vc").value = encryptCol(encryptVig(plaintext, key), key, pc);
+}
+
+function handleDecryptvc() {
+  var ciphertext = normalize(getById("m-vc").value);
+  if (validate(ciphertext, 'Please enter some ciphertext (letters only).')) return;
+  var key = normalize(getById("key-vc").value);
+  getById("r-vc").value = decryptVig(decryptCol(ciphertext, key), key);
+}
+
+/* Columnar ke Vigenere */
+
+function handleEncryptcv() {
+  var plaintext = normalize(getById("m-cv").value);
+  if (validate(plaintext, 'Please enter some plaintext.')) return;
+  var key = normalize(getById("key-cv").value);
+  var pc = normalize(getById("pc-cv").value);
+  getById("r-cv").value = encryptVig(encryptCol(plaintext, key, pc), key);
+}
+
+function handleDecryptcv() {
+  var ciphertext = normalize(getById("m-cv").value);
+  if (validate(ciphertext, 'Please enter some ciphertext (letters only).')) return;
+  var key = normalize(getById("key-cv").value);
+  getById("r-cv").value = decryptCol(decryptVig(ciphertext, key), key);
+}

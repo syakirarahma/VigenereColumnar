@@ -31,12 +31,12 @@ h1{
 }
 
 .nav-pills .nav-link{
-    margin: 0 60px;
+    margin: 0 10px;
     color: #33539E;
     margin-top: 30px;
     font-size: 20px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .nav-pills .nav-item .active{
@@ -80,6 +80,24 @@ h1{
     margin: 10px 10px;
 }
 
+.reset input{
+    border-radius: 60px;
+    border:#7FACD6 2px solid;
+    background-color: #7FACD6;
+    color: white;
+    padding: 6px 25px;
+    /* float: right;
+    margin-bottom: 30px; */
+}
+
+.reset input:hover{
+    border: none;
+    background-image: linear-gradient(to bottom right,#64E8DE, #8A64EB);
+    color: white;
+    padding: 8px 27px;
+}
+
+
 .button input:hover{
     border: none;
     background-image: linear-gradient(to bottom right, #64E8DE, #8A64EB);
@@ -98,6 +116,14 @@ h1{
 }
 
 #r-columnar{
+    background-color: white;
+}
+
+#r-vc{
+    background-color: white;
+}
+
+#r-cv{
     background-color: white;
 }
 
